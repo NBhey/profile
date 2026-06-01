@@ -13,7 +13,7 @@ export const Author = () => {
   return (
     <>
       {pathname === '/' && (
-        <div className="py-8 border-t border-[#C7C4D7]">
+        <div className="flex gap-x-3 py-8 border-t border-[#C7C4D7]">
           <Image
             src="/assets/author.png"
             alt="author"
