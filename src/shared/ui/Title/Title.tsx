@@ -1,8 +1,12 @@
+import { Typography } from '@/src/shared/ui/Typography/Typography'
+
 export const Title = () => {
   return (
-    <>
-      <h1>Портфолио</h1>
-      <h2>Frontend - разработчик</h2>
-    </>
+    <div className="self-start pb-12 flex flex-col gap-y-2 items-start">
+      <Typography as="h1" variant="bold" size="24">
+        Портфолио
+      </Typography>
+      <h2>FRONTEND РАЗРАБОТЧИК</h2>
+    </div>
   )
 }
