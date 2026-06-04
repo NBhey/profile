@@ -1,16 +1,26 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { NAV_ROUT_ITEMS } from '@/src/shared/model/nav-items'
 
 import { Icon } from '@/src/shared/ui/Icon/Icon'
+import clsx from 'clsx'
 
 export const Navbar = () => {
+  const pathname = usePathname()
+
   return (
-    <nav className="flex flex-col items-start justify-center">
+    <nav className="self-start flex flex-col gap-y-8 items-start justify-center">
       {NAV_ROUT_ITEMS.map((route) => (
         <Link
           key={route.title}
           href={route.href}
-          className="w-full p-1 rounded-sm flex items-center gap-4  hover:text-[#4648D4]"
+          className={clsx(
+            'max-w-56.25 w-screen flex-1 rounded-sm flex items-center gap-x-4  hover:text-primary',
+            pathname === route.href &&
+              "pl-1 text-primary hover:none after:content-[''] after:w-0.5 after:bg-primary after:h-6 after:ml-auto",
+          )}
           prefetch={true}
         >
           <Icon name={route.name} size={20} />
