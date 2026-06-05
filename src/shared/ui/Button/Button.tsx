@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ComponentProps, ReactNode } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
@@ -6,38 +6,52 @@ import { ROUTES } from '@/src/shared/config/routes'
 
 const BUTTON_STYLE = {
   primary:
-    'p-1 lg:py-3 lg:px-6 bg-primary text-[#FFFFFF] rounded-[4px] shadow-sm hover:bg-[#1F2937]',
+    'text-center p-1 lg:py-3 lg:px-6 bg-primary text-[#FFFFFF] rounded-[4px] shadow-sm hover:bg-[#1F2937]',
   outlined:
-    'p-1 lg:py-3 lg:px-6 bg-inherit text-[#121C2A] rounded-[4px] shadow-sm hover:bg-[#1F2937] hover:text-[#FFFFFF]',
+    'text-center p-1 lg:py-3 lg:px-6 bg-inherit text-[#121C2A] rounded-[4px] shadow-sm hover:bg-[#767586] hover:text-[#FFFFFF]',
 } as const
 
-interface ButtonProps {
-  variant: BUTTON_VIEW
+type BtnStyle = keyof typeof BUTTON_STYLE
+
+interface BaseProps {
   children: ReactNode
-  btnStyle: keyof typeof BUTTON_STYLE
-  className?: string
-  href?: keyof typeof ROUTES | ''
+  btnStyle: BtnStyle
 }
 
-export const Button = ({
-  variant,
-  children,
-  btnStyle,
-  className,
-  href = '',
-}: ButtonProps) => {
-  if (variant === BUTTON_VIEW['LINK']) {
+type RealButtonProps = BaseProps & {
+  as: BUTTON_VIEW.BUTTON
+  href?: never
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'>
+
+type RealLinkProps = BaseProps & {
+  as: BUTTON_VIEW.LINK
+  href: keyof typeof ROUTES | ''
+} & Omit<ComponentProps<typeof Link>, 'href' | 'children'>
+
+type ButtonProps = RealButtonProps | RealLinkProps
+
+export const Button = (props: ButtonProps) => {
+  if (props.as === BUTTON_VIEW['LINK']) {
+    const { as, children, btnStyle, className, href = '', ...rest } = props
     return (
       <Link
         className={clsx(BUTTON_STYLE[btnStyle], className)}
         href={`/${href}`}
+        {...rest}
       >
-        Смотреть проекты{' '}
+        {children}
       </Link>
     )
   }
+
+  const { as, children, btnStyle, className, ...rest } = props
+
   return (
-    <button className={clsx(BUTTON_STYLE[btnStyle], className)}>
+    <button
+      type="button"
+      className={clsx(BUTTON_STYLE[btnStyle], className)}
+      {...rest}
+    >
       {children}
     </button>
   )
