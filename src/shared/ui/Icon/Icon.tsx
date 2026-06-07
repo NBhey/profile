@@ -1,4 +1,5 @@
 import { Icons } from '@/src/shared/icons'
+import { ComponentType, SVGProps } from 'react'
 
 type IconName = keyof typeof Icons
 
