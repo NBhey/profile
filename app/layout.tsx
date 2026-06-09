@@ -1,18 +1,8 @@
 import type { Metadata } from 'next'
 
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { Sidebar } from '@/src/widgets/home/ui/Sidebar'
-
-const geistSans = Inter({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Inter({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
+import { inter } from '@/app/fonts'
 
 export const metadata: Metadata = {
   title: 'NBhey-frontend',
@@ -25,12 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="ru"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="ru" className={`${inter.className} h-full antialiased`}>
       <body className="flex flex-col flex-1 items-center justify-center min-h-full bg-background">
-        <div className="max-w-300 w-full h-auto flex items-center border border-1 border-[#C7C4D7] rounded-lg">
+        <div className="realtive max-w-300 w-full h-auto min-h-140 flex items-center border border-[#C7C4D7] rounded-lg">
           <Sidebar />
           {children}
         </div>
