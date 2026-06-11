@@ -19,7 +19,7 @@ export const Navbar = () => {
           className={clsx(
             'max-w-56.25 w-screen flex-1 rounded-sm flex items-center gap-x-4  hover:text-primary',
             pathname === route.href &&
-              "pl-1 text-primary hover:none after:content-[''] after:w-0.5 after:bg-primary after:h-6 after:ml-auto",
+              "pl-1 text-primary hover:none after:content-[''] after:w-0.5 after:bg-primary after:h-6 after:ml-auto translate-x-1 transition-all duration-300",
           )}
           prefetch={true}
         >
