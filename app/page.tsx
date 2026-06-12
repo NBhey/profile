@@ -5,13 +5,13 @@ import { BUTTON_VIEW } from '@/src/shared/model/types'
 export default function Home() {
   return (
     <div className="flex-1 flex flex-col gap-y-6">
-      <Typography as="h1" variant="bold" size={'48'}>
+      <Typography as="h1" variant="bold" size="32-48">
         Привет, я Оганес
         <br className="none" /> Я разрабатываю{' '}
         <Typography
           as="span"
           variant="bold"
-          size={'48'}
+          size="32-48"
           className="text-primary italic"
         >
           быстрые
@@ -19,29 +19,19 @@ export default function Home() {
         и современные веб-интерфейсы.
       </Typography>
 
-      <Typography as="p" variant="normal" size="18">
-        Специализируюсь на создании качественных фронтенд-решений, используя,
-        NextJS, TypeScript, Tailwind и современные веб-разработки.
+      <Typography as="p" variant="normal" size="16-18">
+        Специализируюсь на создании качественных фронтенд-решений, используя{' '}
+        <b>NextJS</b>, <b>Tailwind</b>, <b>Python</b> и современные стандарты
+        веб-разработки. <br /> Моя цель — писать чистый, поддерживаемый код и
+        превращать сложные макеты в производительные и доступные интерфейсы.
       </Typography>
-      <p>
-        Моя цель писать чистый, поддерижваемый код и превращать сложные макеты в
-        производительные и доступные интерфейсы
-      </p>
 
       <div className="flex gap-x-4">
-        <Button
-          href="projects"
-          variant={BUTTON_VIEW['LINK']}
-          btnStyle="primary"
-        >
+        <Button href="projects" as={BUTTON_VIEW['LINK']} btnStyle="primary">
           Смотреть проекты{' '}
         </Button>
 
-        <Button
-          href="contacts"
-          variant={BUTTON_VIEW['LINK']}
-          btnStyle="outlined"
-        >
+        <Button href="contacts" as={BUTTON_VIEW['LINK']} btnStyle="outlined">
           Связаться
         </Button>
       </div>

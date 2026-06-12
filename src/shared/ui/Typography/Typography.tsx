@@ -3,17 +3,19 @@ import clsx from 'clsx'
 
 const textSettings = {
   normal: `font-normal leading-[130%] tracking-wide`,
+  medium: `font-medium leading-[100%] tracking-wide`,
+  semibold: `font-semibold leading-[130%] tracking-wide`,
   bold: 'font-bold leading-[110%]',
 } satisfies Record<string, string>
 
 const textSize: Record<string, string> = {
   '12': 'text-xs',
-  '14': 'text-sm',
-  '16': 'text-base',
-  '18': 'text-lg',
-  '24': 'text-2xl',
-  '32': 'text-[32px]',
-  '48': 'text-[48px]',
+  '12-14': 'text-xs lg:text-sm',
+  '14-16': 'text-sm lg:text-base',
+  '16-18': 'text-base lg:text-lg',
+  '18-24': 'text-lg lg:text-2xl',
+  '24-32': 'text-2xl lg:text-[32px]',
+  '32-48': 'text-[32px] lg:text-[48px]',
 }
 
 interface TypographyProps {
@@ -28,7 +30,7 @@ export const Typography = ({
   as: Component = 'div',
   children,
   variant,
-  size = '18',
+  size = '16-18',
   className,
 }: TypographyProps) => {
   return (

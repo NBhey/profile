@@ -7,7 +7,7 @@ export const NAV_ROUT_ITEMS = [
   {
     href: ROUTES.otherWorkExperience,
     name: 'otherWorkExperience',
-    title: 'Опыт работы в других сферах',
+    title: 'Опыт вне it',
   },
   { href: ROUTES.contacts, name: 'contacts', title: 'Контакты' },
 ]

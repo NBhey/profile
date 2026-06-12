@@ -9,6 +9,8 @@ const BUTTON_STYLE = {
     'text-center p-1 lg:py-3 lg:px-6 bg-primary text-[#FFFFFF] rounded-[4px] shadow-sm hover:bg-[#1F2937]',
   outlined:
     'text-center p-1 lg:py-3 lg:px-6 bg-inherit text-[#121C2A] rounded-[4px] shadow-sm hover:bg-[#767586] hover:text-[#FFFFFF]',
+  inverted:
+    'text-center p-1 lg:py-3 lg:px-6 bg-neutral text-[#FFFFFF] rounded-[4px] shadow-sm hover:bg-primary hover:text-[#FFFFFF]',
 } as const
 
 type BtnStyle = keyof typeof BUTTON_STYLE
@@ -35,7 +37,7 @@ export const Button = (props: ButtonProps) => {
     const { as, children, btnStyle, className, href = '', ...rest } = props
     return (
       <Link
-        className={clsx(BUTTON_STYLE[btnStyle], className)}
+        className={clsx(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
         href={`/${href}`}
         {...rest}
       >
@@ -49,7 +51,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={clsx(BUTTON_STYLE[btnStyle], className)}
+      className={clsx(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
       {...rest}
     >
       {children}
