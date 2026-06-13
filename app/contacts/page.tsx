@@ -1,8 +1,6 @@
 import { Typography } from '@/src/shared/ui/Typography/Typography'
 import { SocialLinkListElement } from '@/src/features/contacts/ui/SocialLinkList/SocialLinkList'
 import Link from 'next/link'
-import { Button } from '@/src/shared/ui/Button/Button'
-import { BUTTON_VIEW } from '@/src/shared/model/types'
 import { ContactWithAuthorForm } from '@/src/features/contacts/ui/ContactWithAuthorForm/ContactWithAuthorForm'
 
 export default function Contacts() {
