@@ -1,6 +1,6 @@
 export const ROUTES = {
   home: '/',
-  workExperience: '/work-experience',
+  experience: '/experience',
   projects: '/projects',
   otherWorkExperience: '/other-work-experience',
   contacts: '/contacts',
