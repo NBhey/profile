@@ -6,11 +6,14 @@
   --primary-color: #4648D4 ;
 }
 
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary-color);
   --color-neutral: #1F2937;
+  --animate-fade-slide-up: fade-slide-up .6s cubic-bezier(.22,1,.36,1) both;
+  --animate-loader-dash: dash 1.5s ease-in-out infinite;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,8 +47,10 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-@theme {
-  --animate-fade-slide-up: fade-slide-up .6s cubic-bezier(.22,1,.36,1) both;
+@keyframes dash {
+  0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
 }
 
 @layer components {
