@@ -29,20 +29,6 @@ pnpm start        # запуск собранной версии
 pnpm lint         # проверка ESLint
 ```
 
-### Переменные окружения
-
-Для работы формы контактов (`POST /api/contact`) нужен доступ к SMTP-серверу.
-Создайте `.env.local` в корне проекта:
-
-```env
-NEXT_PUBLIC_SMTP_HOST=smtp.example.com
-NEXT_PUBLIC_SMTP_USERNAME=your_login
-NEXT_PUBLIC_SMTP_PASSWORD=your_password
-```
-
-Подключение идёт по порту `465` (SSL). Без этих переменных отправка письма
-вернёт ошибку 500, остальная часть сайта работает.
-
 ## Структура проекта
 
 Сосуществуют два дерева исходников — так задумано:
