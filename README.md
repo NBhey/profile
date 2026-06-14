@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# my_profile — персональное портфолио
 
-## Getting Started
+Личный сайт-портфолио: о себе, опыт работы, проекты и форма обратной связи
+с отправкой письма автору на почту. Интерфейс на русском языке (`<html lang="ru">`).
 
-First, run the development server:
+## Стек
+
+| Технология | Версия | Зачем используется |
+| --- | --- | --- |
+| **Next.js** (App Router) | 16 | Фреймворк: страницы, серверный рендеринг и API-роуты в одном проекте |
+| **React** | 19 | UI-библиотека, клиентские компоненты |
+| **TypeScript** | 5 (strict) | Статическая типизация |
+| **Tailwind CSS** | 4 | Стилизация утилит-классами; тема описана прямо в CSS |
+| **axios** | 1 | HTTP-клиент для запросов с фронта к API-роутам |
+| **nodemailer** | 8 | Отправка письма из формы контактов на почту автора |
+| **clsx** | 2 | Условная сборка списков классов |
+| **@svgr/webpack** | 8 | Импорт SVG как React-компонентов |
+| **ESLint / Prettier** | 9 / 3 | Линтинг и форматирование |
+
+Менеджер пакетов — **pnpm** (см. `pnpm-lock.yaml`).
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install      # установка зависимостей
+pnpm dev          # дев-сервер на http://localhost:3000
+pnpm build        # продакшн-сборка
+pnpm start        # запуск собранной версии
+pnpm lint         # проверка ESLint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Переменные окружения
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Для работы формы контактов (`POST /api/contact`) нужен доступ к SMTP-серверу.
+Создайте `.env.local` в корне проекта:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_SMTP_HOST=smtp.example.com
+NEXT_PUBLIC_SMTP_USERNAME=your_login
+NEXT_PUBLIC_SMTP_PASSWORD=your_password
+```
 
-## Learn More
+Подключение идёт по порту `465` (SSL). Без этих переменных отправка письма
+вернёт ошибку 500, остальная часть сайта работает.
 
-To learn more about Next.js, take a look at the following resources:
+## Структура проекта
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Сосуществуют два дерева исходников — так задумано:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **`app/`** — App Router. Страницы (`page.tsx`), общий лейаут (`layout.tsx`,
+  подключает шрифты и каркас с сайдбаром) и серверные API-роуты (`app/api/**`).
+- **`src/`** — переиспользуемый код по методологии **Feature-Sliced Design**:
+  - `src/shared/` — базовый слой: UI-компоненты (`ui/`), HTTP-клиент
+    (`api/httpNext.ts`), конфиг маршрутов (`config/routes.ts`), типы, утилиты,
+    иконки;
+  - `src/features/` — функциональные блоки: опыт работы (`experience/`),
+    контакты (`contacts/`);
+  - `src/widgets/` — крупные составные блоки (например, `home/` — сайдбар и
+    блок «об авторе»).
 
-## Deploy on Vercel
+Алиас импортов: `@/*` указывает на корень репозитория (`@/src/...`, `@/app/...`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Маршруты
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Источник правды по страницам — `src/shared/config/routes.ts`:
+
+| Путь | Назначение |
+| --- | --- |
+| `/` | Главная — об авторе |
+| `/experience` | Опыт работы |
+| `/projects` | Проекты |
+| `/other-work-experience` | Прочий опыт |
+| `/contacts` | Контакты и форма связи |
+
+## API
+
+| Метод и путь | Что делает |
+| --- | --- |
+| `GET /api/experience` | Читает `experience.json` с диска и отдаёт данные об опыте работы |
+| `POST /api/contact` | Принимает `{ name, email, text }`, валидирует и отправляет письмо автору через nodemailer |
+
+Данные об опыте работы лежат в `experience.json` в корне проекта: список
+компаний, внутри каждой — проекты со стеком и ключевыми достижениями.
+
+## Оформление кода
+
+Конвенции Prettier: без точек с запятой, двойные кавычки, отступ в 2 пробела,
+завершающие запятые везде, ширина строки 80. Новый код пишется по этим правилам.
