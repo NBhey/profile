@@ -1,0 +1,123 @@
+{
+  "experience": [
+    {
+      "company": "Рабочие решения",
+      "type": "Аутсорс / аутстафф",
+      "location": "Ростов-на-Дону",
+      "period": "Август 2025 — настоящее время",
+      "role": "Frontend-разработчик",
+      "projects": [
+        {
+          "name": "Кастомизация Outline (self-hosted корпоративная wiki)",
+          "slug": "outline-customization",
+          "role": "Frontend / Fullstack Developer · R&D",
+          "period": "Май 2026 — настоящее время",
+          "nda": false,
+          "stack": [
+            "TypeScript",
+            "React",
+            "Node.js",
+            "PostgreSQL",
+            "Redis",
+            "Docker",
+            "Caddy",
+            "ProseMirror",
+            "Y.js",
+            "Puppeteer"
+          ],
+          "highlights": [
+            "Развернул и адаптировал vendor-форк Outline под внедрения у заказчиков с multi-stage Docker-сборкой",
+            "Спроектировал каркас расширяемости поверх upstream: реестр кейсов, TS path-alias, изолированная Babel-компиляция",
+            "Реализовал серверный экспорт документов в PDF и DOCX для community-версии",
+            "Доработал редактор ProseMirror/Y.js: добавил выравнивание текста с сохранением в HTML, PDF и Word",
+            "Реализовал white-label UI, guest read-only доступ и полную русскую локализацию интерфейса",
+            "Задеплоил демо-контур на VPS: Caddy с авто-TLS и рабочей отправкой magic-link писем"
+          ]
+        },
+        {
+          "name": "Сервис подбора заведений",
+          "slug": "venue-discovery-service",
+          "role": "Frontend / Fullstack Developer",
+          "period": "Октябрь 2025 — Май 2026",
+          "nda": true,
+          "stack": [
+            "React",
+            "Next.js 15",
+            "TypeScript",
+            "Zustand",
+            "Tailwind CSS",
+            "Django",
+            "DRF",
+            "PostgreSQL",
+            "Redis",
+            "Docker",
+            "Celery",
+            "MinIO"
+          ],
+          "highlights": [
+            "Разработал ключевые разделы сервиса: главную, каталог, фильтры и личный кабинет бизнеса",
+            "Реализовал бизнес-функции личного кабинета: подписки, аналитику, заявки и отзывы",
+            "Интегрировал Яндекс.Карты 2.1: кастомные маркеры, попапы, поиск рядом с пользователем и метро",
+            "Доработал поиск и фильтрацию: автокомплит по названию с учётом города, редизайн каталога",
+            "Решал задачи SSR/CSR в Next.js: гидрация, клиентское состояние, различия окружений",
+            "Участвовал в backend-разработке на Django/DRF: endpoints, модели, миграции, сериализаторы, сервисный слой",
+            "Построил SEO sitemap-систему с генерацией через Celery и публикацией в S3/MinIO",
+            "Оптимизировал производительность: устранил N+1-запросы, ускорил Admin changelist, добавил Redis-кеширование"
+          ]
+        },
+        {
+          "name": "Учебно-практические проекты (стажировка)",
+          "slug": "internship-projects",
+          "role": "Frontend Developer Intern",
+          "period": "Август 2025 — Октябрь 2025",
+          "nda": false,
+          "stack": [
+            "React",
+            "Next.js",
+            "Nuxt",
+            "Vue",
+            "TypeScript",
+            "Redux Toolkit",
+            "Pinia",
+            "React Virtuoso"
+          ],
+          "highlights": [
+            "Разработал 4 проекта: конвертер величин, каталог магазина, каталог новостей с фильтрами и учёт расходов",
+            "Поработал с React, Next.js, Nuxt и Vue; применял Redux Toolkit, Pinia и React Virtuoso"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Aston",
+      "type": "Лаборатория (некоммерческий проект)",
+      "location": "Ростов-на-Дону",
+      "period": "Июнь 2025 — Август 2025",
+      "role": "React-разработчик (Лаборант)",
+      "projects": [
+        {
+          "name": "Веб-приложение для страховой компании (микрофронтенд-архитектура)",
+          "slug": "insurance-microfrontend",
+          "role": "React Developer",
+          "period": "Июнь 2025 — Август 2025",
+          "nda": false,
+          "stack": [
+            "React",
+            "TypeScript",
+            "Figma",
+            "Jest",
+            "React Testing Library",
+            "Scrum"
+          ],
+          "highlights": [
+            "Разработал и поддерживал клиентскую часть: адаптивная и кросс-браузерная вёрстка по макетам Figma",
+            "Реализовал админ-кабинет: страницы отзывов и отчётности",
+            "Настроил тестовое окружение и написал unit-тесты на Jest и React Testing Library",
+            "Восстановил работоспособность одного из микрофронтов: нашёл причину сбоя и устранил её",
+            "Участвовал в командной работе: code review, Scrum-планирование, фикс багов"
+          ]
+        }
+      ]
+    }
+  ]
+}
