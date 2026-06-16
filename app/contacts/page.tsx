@@ -23,7 +23,7 @@ export default function Contacts() {
         </Typography>
       </div>
 
-      <div className="flex gap-x-8 justify-between">
+      <div className="flex flex-col lg:flex-row lg:gap-x-8 lg:justify-between">
         <div className="flex-0 flex flex-col gap-y-15 shrink">
           <div>
             <Typography
