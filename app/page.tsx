@@ -36,11 +36,11 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="pt-12 flex flex-col gap-y-6 border-t border-[#C7C4D7]">
-        <Typography as="h3" variant="bold">
-          Техническая полка
-        </Typography>
-      </div>
+      {/*<div className="pt-12 flex flex-col gap-y-6 border-t border-[#C7C4D7]">*/}
+      {/*  <Typography as="h3" variant="bold">*/}
+      {/*    Техническая полка*/}
+      {/*  </Typography>*/}
+      {/*</div>*/}
     </div>
   )
 }

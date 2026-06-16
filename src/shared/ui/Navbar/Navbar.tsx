@@ -21,7 +21,6 @@ export const Navbar = () => {
             pathname === route.href &&
               "pl-1 text-primary hover:none after:content-[''] after:w-0.5 after:bg-primary after:h-6 after:ml-auto translate-x-1 transition-all duration-300",
           )}
-          prefetch={true}
         >
           <Icon name={route.name} size={20} />
           {route.title}
