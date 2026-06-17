@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Sidebar } from '@/src/widgets/home/ui/Sidebar'
 import { inter } from '@/app/fonts'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'NBhey-frontend',
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang="ru" className={`${inter.className} h-full antialiased`}>
       <body className="p-1 flex flex-col flex-1 items-center justify-center min-h-full max-h-157.5 bg-background">
-        <div className="relative max-w-300 w-full h-auto min-h-140 flex items-center border border-[#C7C4D7] rounded-lg">
+        <div className="relative max-w-300 w-full h-auto lg:min-h-140 flex items-center border border-[#C7C4D7] rounded-lg">
           <Sidebar />
           {children}
         </div>

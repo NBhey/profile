@@ -41,7 +41,7 @@ export const ExperienceList = () => {
         const {
           data: { experience },
         } = await api.get('/experience')
-        console.log(experience)
+
         setExperienceList(experience)
       } catch (error: unknown) {
         if (error instanceof AxiosError) {
