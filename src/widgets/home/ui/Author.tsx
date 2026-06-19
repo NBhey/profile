@@ -9,7 +9,7 @@ export const Author = () => {
   return (
     <>
       {pathname === '/' && (
-        <div className="flex gap-x-3 py-8 border-t border-[#C7C4D7] animate-fade-slide-up">
+        <div className="flex flex-col lg:flex-row gap-x-3 py-8 border-t border-[#C7C4D7] animate-fade-slide-up">
           <Image
             src="/assets/author.png"
             alt="author"
