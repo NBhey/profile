@@ -20,10 +20,12 @@ export const Author = () => {
           />
 
           <div className="flex flex-col">
-            <Typography as="h3" variant="normal" size="14-16">
+            <Typography as="h3" variant="normal" size="12-14">
               Оганес Маркарян-Тридрих
             </Typography>
-            <h4>Опыт коммерческой разработки {formatDate(new Date())}</h4>
+            <Typography as="h4" variant="normal" size="12-14">
+              Опыт коммерческой разработки {formatDate(new Date())}
+            </Typography>
           </div>
         </div>
       )}

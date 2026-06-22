@@ -38,7 +38,7 @@ export const Sidebar = () => {
     // )
     <header
       className={clsx(
-        'w-full max-w-100 flex lg:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5 items-center justify-between ',
+        'w-full max-w-80 flex lg:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5',
       )}
     >
       <Button
