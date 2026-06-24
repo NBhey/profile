@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.className} h-full antialiased`}>
-      <body className="p-1 flex flex-col flex-1 items-center justify-center min-h-full max-h-157.5 bg-background">
-        <div className="relative max-w-300 w-full h-auto lg:min-h-140 flex items-center border border-[#C7C4D7] rounded-lg">
+      <body className="p-1 md:flex flex-col flex-1 items-center justify-center min-h-full max-h-157.5 bg-background ">
+        <div className="p-4 relative max-w-300 w-full md:h-150 flex flex-col md:flex-row md:border border-[#C7C4D7] rounded-lg">
           <Sidebar />
           {children}
         </div>

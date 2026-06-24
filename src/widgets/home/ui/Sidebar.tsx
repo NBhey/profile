@@ -6,13 +6,13 @@ import { Author } from '@/src/widgets/home/ui/Author'
 
 import clsx from 'clsx'
 import { Icon } from '@/src/shared/ui/Icon/Icon'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/src/shared/ui/Button/Button'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
 import { AnimatePresence, motion } from 'motion/react'
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
 
   return (
     //   <header
@@ -38,31 +38,36 @@ export const Sidebar = () => {
     // )
     <header
       className={clsx(
-        'w-full max-w-80 flex lg:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5',
+        'w-full max-w-80 flex md:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5 group',
       )}
     >
       <Button
         as={BUTTON_VIEW.BUTTON}
         btnStyle="primary"
-        className="lg:hidden"
-        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden"
+        onClick={() => setIsVisible(!isVisible)}
       >
         <Icon
           name="downArrow"
           size={30}
-          className={clsx('lg:hidden text-gray-400', isOpen && 'rotate-180')}
+          className={clsx('md:hidden text-gray-400', isVisible && 'rotate-180')}
         />
       </Button>
 
-      {!isOpen && (
-        <AnimatePresence>
-          <motion.div className="hidden lg:block">
+      <AnimatePresence initial={false}>
+        {isVisible && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className={clsx('overflow-hidden md:overflow-visible lg:block')}
+          >
             <Title />
             <Navbar />
             <Author />
           </motion.div>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </header>
   )
 }

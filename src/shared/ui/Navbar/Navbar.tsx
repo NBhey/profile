@@ -11,7 +11,7 @@ export const Navbar = () => {
   const pathname = usePathname()
 
   return (
-    <nav className="self-start flex flex-col gap-y-8 items-start justify-center">
+    <nav className="pb-2 self-start flex flex-col gap-y-7 items-start justify-center">
       {NAV_ROUT_ITEMS.map((route) => (
         <Link
           key={route.title}
