@@ -16,12 +16,12 @@ export async function POST(req: NextRequest) {
 
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_PUBLIC_SMTP_HOST,
+      host: process.env.SMTP_HOST,
       port: 465,
       secure: true,
       auth: {
-        user: process.env.NEXT_PUBLIC_SMTP_USERNAME,
-        pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
+        user: process.env.SMTP_USERNAME,
+        pass: process.env.SMTP_PASSWORD,
       },
     })
 

@@ -20,7 +20,8 @@ export const SocialLinkListElement = () => {
               className="hover:text-primary capitalize flex gap-x-2"
             >
               <Icon name={link.name} size={20} />
-              <span>{link.name}</span>
+              <span>{link.name}</span>{' '}
+              <span className="md:hidden text-primary"> &lt;</span>
             </Link>
           </li>
         )

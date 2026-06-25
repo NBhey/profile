@@ -6,6 +6,7 @@ import contacts from './contacts.svg'
 import github from './github.svg'
 import whatsapp from './whatsapp.svg'
 import telegram from './telegram.svg'
+import downArrow from './downArrow.svg'
 import { ComponentType, SVGProps } from 'react'
 
 export const Icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
@@ -17,4 +18,5 @@ export const Icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   telegram,
   whatsapp,
   github,
+  downArrow,
 } as const

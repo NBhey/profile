@@ -75,7 +75,7 @@ export const ExperienceList = () => {
       {experienceList.map((workPlace) => {
         return (
           <Fragment key={workPlace.company}>
-            <div className="group">
+            <div className=" flex flex-col gap-y-1">
               <div className="pb-3 flex justify-between">
                 <Typography as="h4" variant="bold" size="24-32">
                   {workPlace.company}
@@ -90,7 +90,7 @@ export const ExperienceList = () => {
                 </Typography>
               </div>
 
-              <ul className="px-4 pt-5 flex flex-col gap-y-8 overflow-y-auto h-45 custom-scrollbar">
+              <ul className="px-4 pt-5 flex flex-col gap-y-8 overflow-y-auto h-35 custom-scrollbar ">
                 {workPlace.projects.map((project) => {
                   return (
                     <li
@@ -125,6 +125,7 @@ export const ExperienceList = () => {
                   )
                 })}
               </ul>
+              <hr className="pt-1 text-primary" />
             </div>
           </Fragment>
         )

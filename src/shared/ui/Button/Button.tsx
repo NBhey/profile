@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
 import { ROUTES } from '@/src/shared/config/routes'
+import cn from '@/src/shared/lib/cn'
 
 const BUTTON_STYLE = {
   primary:
@@ -37,7 +38,7 @@ export const Button = (props: ButtonProps) => {
     const { as, children, btnStyle, className, href = '', ...rest } = props
     return (
       <Link
-        className={clsx(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
+        className={cn(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
         href={`/${href}`}
         {...rest}
       >
@@ -51,7 +52,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={clsx(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
+      className={cn(BUTTON_STYLE[btnStyle], className, 'cursor-pointer')}
       {...rest}
     >
       {children}

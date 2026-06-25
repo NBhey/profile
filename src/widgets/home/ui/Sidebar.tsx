@@ -15,56 +15,39 @@ export const Sidebar = () => {
   const [isVisible, setIsVisible] = useState(true)
 
   return (
-    //   <header
-    //     className={clsx(
-    //       !isOpen && '',
-    //       'w-full flex lg:border-r border-[#C7C4D7] self-start px-4 lg:px-8 lg:pt-12 h-full flex-col gap-y-3.5 items-center justify-between ',
-    //     )}
-    //   >
-    //     <Button
-    //       as={BUTTON_VIEW.BUTTON}
-    //       btnStyle="primary"
-    //       className="bg-inherit lg:hidden"
-    //       onClick={() => setIsOpen(!isOpen)}
-    //     >
-    //       <Icon name="downArrow" size={30} className="lg:hidden text-gray-400" />
-    //     </Button>
-    //     <div className={clsx(isOpen && 'hidden')}>
-    //       <Title classname="lg:hidden block" />
-    //       <Navbar />
-    //       <Author />
-    //     </div>
-    //   </header>
-    // )
     <header
       className={clsx(
-        'w-full max-w-80 flex md:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5 group',
+        'md:w-full md:max-w-80 flex md:border-r border-[#C7C4D7] h-full flex-col gap-y-3.5 group',
       )}
     >
       <Button
         as={BUTTON_VIEW.BUTTON}
         btnStyle="primary"
-        className="md:hidden"
+        className="md:hidden bg-inherit self-center"
         onClick={() => setIsVisible(!isVisible)}
       >
         <Icon
           name="downArrow"
           size={30}
-          className={clsx('md:hidden text-gray-400', isVisible && 'rotate-180')}
+          className={clsx(
+            ' md:hidden text-gray-400',
+            isVisible && 'rotate-180',
+          )}
         />
       </Button>
 
       <AnimatePresence initial={false}>
         {isVisible && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className={clsx('overflow-hidden md:overflow-visible lg:block')}
+            initial={{ height: 0 }}
+            animate={{ height: 'auto' }}
+            exit={{ height: 0 }}
+            className={clsx('overflow-hidden md:overflow-visible md:block')}
           >
             <Title />
             <Navbar />
             <Author />
+            <hr className="text-primary md:hidden" />
           </motion.div>
         )}
       </AnimatePresence>
