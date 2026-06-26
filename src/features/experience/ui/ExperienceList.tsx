@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, Suspense, useEffect, useRef, useState } from 'react'
 import api from '@/src/shared/api/httpNext'
 import { Loader } from '@/src/shared/ui/Loader/Loader'
 import { Typography } from '@/src/shared/ui/Typography/Typography'
@@ -28,7 +28,6 @@ type PlaceWork = {
 type ExperienceList = Array<PlaceWork>
 
 export const ExperienceList = () => {
-  const parentRef = useRef(null)
   const [experienceList, setExperienceList] = useState<ExperienceList>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
@@ -71,11 +70,11 @@ export const ExperienceList = () => {
   }
 
   return (
-    <div ref={parentRef} className="flex flex-col gap-y-10">
+    <div className="flex flex-col gap-y-10">
       {experienceList.map((workPlace) => {
         return (
           <Fragment key={workPlace.company}>
-            <div className=" flex flex-col gap-y-1">
+            <div className="group flex flex-col gap-y-1">
               <div className="pb-3 flex justify-between">
                 <Typography as="h4" variant="bold" size="24-32">
                   {workPlace.company}
