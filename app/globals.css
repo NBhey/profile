@@ -3,30 +3,22 @@
 
 :root {
   --background: #F8F9FF;
-  --foreground: #171717;
   --primary-color: #4648D4 ;
 }
 
 
 @theme {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+
   --color-primary: var(--primary-color);
   --color-neutral: #1F2937;
   --animate-fade-slide-up: fade-slide-up .6s cubic-bezier(.22,1,.36,1) both;
   --animate-loader-dash: dash 1.5s ease-in-out infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
-  color: var(--foreground);
+
 }
 
 
