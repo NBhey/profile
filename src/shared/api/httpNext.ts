@@ -1,4 +1,4 @@
-import axios, { InternalAxiosRequestConfig } from 'axios'
+import axios, { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
 const instance = axios.create({
   baseURL: '/api',
@@ -6,8 +6,12 @@ const instance = axios.create({
 })
 
 const api = {
-  post: <T>(url: string, data?: T, config?: InternalAxiosRequestConfig) => {
-    return instance.post<T>(url, data, config)
+  post: async <T>(
+    url: string,
+    data?: T,
+    config?: InternalAxiosRequestConfig,
+  ): Promise<AxiosResponse> => {
+    return await instance.post<T>(url, data, config)
   },
   get: (url: string) => {
     return instance.get(url)

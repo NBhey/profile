@@ -4,6 +4,8 @@ import { useRef } from 'react'
 import { Button } from '@/src/shared/ui/Button/Button'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
 import api from '@/src/shared/api/httpNext'
+import { toast } from 'react-toastify'
+import { AxiosError } from 'axios'
 
 export const ContactWithAuthorForm = () => {
   const nameInput = useRef<HTMLInputElement>(null)
@@ -16,9 +18,14 @@ export const ContactWithAuthorForm = () => {
     text: string,
   ) => {
     try {
-      await api.post('/contact', { name, email, text })
-    } catch (e) {
-      console.log(e)
+      const { data } = await api.post('/contact', { name, email, text })
+
+      return data.message
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        throw error
+      }
+      throw error
     }
   }
 
@@ -32,9 +39,18 @@ export const ContactWithAuthorForm = () => {
         const textarea = textareaInput.current?.value
 
         if (name && email && textarea) {
-          submitContactMessage(name, email, textarea).finally(() => {
-            form.reset()
-          })
+          submitContactMessage(name, email, textarea)
+            .then((message) => {
+              form.reset()
+              toast.success(message)
+            })
+            .catch((error) => {
+              if (error.status === 500) {
+                toast.error('Ошибка на сервере, попробуйте позже')
+              } else {
+                toast.error('Ошибка отправки')
+              }
+            })
         }
       }}
       className="p-5 border bg-[#ffffff] flex flex-col gap-y-6"

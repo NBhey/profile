@@ -5,6 +5,8 @@ import { Sidebar } from '@/src/widgets/home/ui/Sidebar'
 import { inter } from '@/app/fonts'
 import { baseMetadata } from '@/src/shared/config/seo'
 import type { ReactNode } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const metadata: Metadata = baseMetadata
 
@@ -20,6 +22,7 @@ export default function RootLayout({
           <Sidebar />
           {children}
         </div>
+        <ToastContainer />
       </body>
     </html>
   )
