@@ -42,11 +42,15 @@ export const NotFoundContent = () => {
   }
 
   return (
-    <>
-      <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-y-75 text-[192px] text-primary opacity-10">
+    <div className="w-full max-w-2xl z-10 flex flex-col items-center gap-y-10 pt-20">
+      <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-translate-y-75 text-[192px] text-primary opacity-10 -z-10">
         404
       </p>
-      <pre>Страница не найдена</pre>
-    </>
+
+      <p>Такой страницы не существует </p>
+      <Button href="" as={BUTTON_VIEW['LINK']} btnStyle="primary">
+        Вернуться на главную
+      </Button>
+    </div>
   )
 }

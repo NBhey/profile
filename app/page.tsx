@@ -1,6 +1,14 @@
+import type { Metadata } from 'next'
+
 import { Typography } from '@/src/shared/ui/Typography/Typography'
 import { Button } from '@/src/shared/ui/Button/Button'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
+
+export const metadata: Metadata = {
+  description:
+    'Оганес — frontend-разработчик. Создаю быстрые, современные и доступные веб-интерфейсы на Next.js, React, TypeScript и Tailwind.',
+  alternates: { canonical: '/' },
+}
 
 export default function Home() {
   return (

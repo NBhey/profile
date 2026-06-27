@@ -32,11 +32,12 @@ export const ContactWithAuthorForm = () => {
         const textarea = textareaInput.current?.value
 
         if (name && email && textarea) {
-          submitContactMessage(name, email, textarea)
-          form.reset()
+          submitContactMessage(name, email, textarea).finally(() => {
+            form.reset()
+          })
         }
       }}
-      className="p-6 border bg-[#ffffff] flex flex-col gap-y-6"
+      className="p-5 border bg-[#ffffff] flex flex-col gap-y-6"
     >
       <div className="relative group">
         <input

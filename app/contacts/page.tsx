@@ -1,11 +1,20 @@
+import type { Metadata } from 'next'
+
 import { Typography } from '@/src/shared/ui/Typography/Typography'
 import { SocialLinkListElement } from '@/src/features/contacts/ui/SocialLinkList/SocialLinkList'
 import Link from 'next/link'
 import { ContactWithAuthorForm } from '@/src/features/contacts/ui/ContactWithAuthorForm/ContactWithAuthorForm'
 
+export const metadata: Metadata = {
+  title: 'Контакты',
+  description:
+    'Свяжитесь со мной для сотрудничества над проектом. Открыт для фриланса и новых возможностей.',
+  alternates: { canonical: '/contacts' },
+}
+
 export default function Contacts() {
   return (
-    <div className="flex flex-col gap-y-15">
+    <div className="flex flex-col gap-y-10">
       <div>
         <Typography variant="bold" as="h1" size="32-48">
           {' '}
@@ -24,7 +33,7 @@ export default function Contacts() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 lg:justify-between">
-        <div className="flex-0 flex flex-col gap-y-15 shrink">
+        <div className="flex-0 flex flex-col gap-y-4 shrink">
           <div>
             <Typography
               as="p"
