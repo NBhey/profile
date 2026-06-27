@@ -35,8 +35,8 @@ export default function Home() {
       </Typography>
       <hr />
       <div className="flex gap-x-4">
-        <Button href="projects" as={BUTTON_VIEW['LINK']} btnStyle="primary">
-          Смотреть проекты{' '}
+        <Button href="experience" as={BUTTON_VIEW['LINK']} btnStyle="primary">
+          Смотреть опыт{' '}
         </Button>
 
         <Button href="contacts" as={BUTTON_VIEW['LINK']} btnStyle="outlined">
