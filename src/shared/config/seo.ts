@@ -27,6 +27,9 @@ export const baseMetadata: Metadata = {
   ],
   authors: [{ name: SITE.author }],
   creator: SITE.author,
+  verification: {
+    yandex: '69f6bb8f328af7ad',
+  },
   alternates: {
     canonical: '/',
   },
