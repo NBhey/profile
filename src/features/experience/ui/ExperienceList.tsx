@@ -1,77 +1,12 @@
-'use client'
-
-import { Fragment, Suspense, useEffect, useRef, useState } from 'react'
-import api from '@/src/shared/api/httpNext'
-import { Loader } from '@/src/shared/ui/Loader/Loader'
+import { Fragment } from 'react'
 import { Typography } from '@/src/shared/ui/Typography/Typography'
-import { AxiosError } from 'axios'
-
-type Project = {
-  name: string
-  highlights: string[]
-  nda: boolean
-  period: string
-  role: string
-  slug: string
-  stack: string[]
-}
-
-type PlaceWork = {
-  company: string
-  location: string
-  period: string
-  projects: Project[]
-  role: string
-  type: string
-}
-
-type ExperienceList = Array<PlaceWork>
+import { getExperienceList } from '@/src/features/experience/api/getExperienceList'
 
 export const ExperienceList = () => {
-  const [experienceList, setExperienceList] = useState<ExperienceList>([])
-  const [loading, setLoading] = useState<boolean>(false)
-  const [error, setError] = useState<string | null>(null)
-
-  useEffect(() => {
-    async function loadExperienceList() {
-      try {
-        setLoading(true)
-
-        const {
-          data: { experience },
-        } = await api.get('/experience')
-
-        setExperienceList(experience)
-      } catch (error: unknown) {
-        if (error instanceof AxiosError) {
-          setError('Не удалось загрузить список' + ' ' + error.status)
-        } else {
-          setError('Не удалось загрузить список')
-        }
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadExperienceList()
-  }, [])
-
-  if (loading) {
-    return <Loader size={52} color="var(--primary-color)" margin="auto" />
-  }
-
-  if (error) {
-    return (
-      <Typography as="p" variant="bold" size="24-32" className="m-auto pt-20">
-        {error}
-      </Typography>
-    )
-  }
-
+  const experience = getExperienceList()
   return (
     <div className="flex flex-col gap-y-10">
-      {experienceList.map((workPlace) => {
+      {experience.map((workPlace) => {
         return (
           <Fragment key={workPlace.company}>
             <div className="group flex flex-col gap-y-1">
