@@ -29,6 +29,7 @@ export const baseMetadata: Metadata = {
   creator: SITE.author,
   verification: {
     yandex: '69f6bb8f328af7ad',
+    google: 'Ag4C6Cwy0wEFR3qk8U2VR2QhprTNGlna8NnE6tLSS2E',
   },
   alternates: {
     canonical: '/',
