@@ -9,6 +9,6 @@ export const ensureUniqueUsersFile = async (): Promise<void> => {
 
   fs.mkdirSync(directoryPath, { recursive: true })
   if (!fs.existsSync(file)) {
-    fs.writeFileSync(file, '{}', { flag: 'wx' })
+    fs.writeFileSync(file, '[]', { flag: 'wx' })
   }
 }

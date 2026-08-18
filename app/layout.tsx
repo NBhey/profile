@@ -7,10 +7,11 @@ import { baseMetadata } from '@/src/shared/config/seo'
 import type { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import UniqueVisitorTracking from '@/app/(analytics)/UniqueVisitorTracking'
 
 export const metadata: Metadata = baseMetadata
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode
@@ -24,6 +25,8 @@ export default function RootLayout({
         </div>
         <ToastContainer />
       </body>
+
+      <UniqueVisitorTracking />
     </html>
   )
 }
