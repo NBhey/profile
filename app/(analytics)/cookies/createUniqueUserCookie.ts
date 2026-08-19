@@ -4,7 +4,7 @@ import { cookies } from 'next/headers'
 import { getUniqueUsersList } from '@/server/lib/getUniqueUsersList'
 import { createHashForUniqueUsers } from '@/server/lib/createHashForUniqueUsers'
 import path from 'node:path'
-import { readFile, writeFile } from 'node:fs/promises'
+import { appendFile, writeFile } from 'node:fs/promises'
 
 export async function createCookies() {
   const cookiesStore = await cookies()
@@ -16,6 +16,8 @@ export async function createCookies() {
     const userIndividualCode = await createHashForUniqueUsers()
     cookiesStore.set('userId', userIndividualCode, {
       secure: true,
+      maxAge: 3_600 * 24 * 30 * 365,
+      httpOnly: true,
     })
 
     uniqueUsersList.push(userIndividualCode)

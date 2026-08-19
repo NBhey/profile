@@ -1,4 +1,4 @@
-'use server'
+import 'server-only'
 
 import path from 'node:path'
 import fs from 'node:fs'

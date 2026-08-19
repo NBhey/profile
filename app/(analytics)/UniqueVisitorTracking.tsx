@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 export default function UniqueVisitorTracking() {
   useEffect(() => {
-    void createCookies()
+    createCookies().then(() => {})
   }, [])
 
   return null
