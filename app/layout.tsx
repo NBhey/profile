@@ -19,7 +19,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${inter.className} antialiased h-screen`}>
-      <body>
+      <body className="pb-30">
         {children}
         <Navbar />
         <ToastContainer />
