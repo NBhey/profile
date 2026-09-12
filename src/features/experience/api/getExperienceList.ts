@@ -23,13 +23,13 @@ type PlaceWork = {
 type ExperienceList = Array<PlaceWork>
 
 export function getExperienceList() {
-  const experienceJson = fs.readFileSync(
+  const experienceJSON = fs.readFileSync(
     path.join(process.cwd(), 'experience.json'),
     'utf-8',
   )
 
   const { experience }: { experience: ExperienceList } =
-    JSON.parse(experienceJson)
+    JSON.parse(experienceJSON)
 
   return experience
 }
