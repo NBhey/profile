@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { getExperienceList } from '@/src/features/experience/api/getExperienceList'
-import { Button } from '@/src/shared/ui/Button/Button'
-import { BUTTON_VIEW } from '@/src/shared/model/types'
+
+import { ExperienceWorkContextProvider } from '@/src/features/experience/model/ExperienceWorkStoreProvider'
+import { ReactNode } from 'react'
+import { Typography } from '@/src/shared/ui/Typography/Typography'
 
 export const metadata: Metadata = {
   title: 'Опыт работы',
@@ -10,41 +11,29 @@ export const metadata: Metadata = {
   alternates: { canonical: '/experience' },
 }
 
-// export default async function Experience() {
-//   return (
-//     <div className="h-auto flex flex-col gap-y-8 ">
-//       <div>
-//         <Typography as="h1" variant="bold" size="32-48">
-//           Опыт работы
-//         </Typography>
-//
-//         <Typography as="h3" variant="normal">
-//           Хронологический обзор моего профессионального пути, основные роли,
-//           обязанности и достижения.
-//         </Typography>
-//       </div>
-//
-//       <ExperienceList />
-//     </div>
-//   )
-// }
+const Wrapper = ({ children }: { children: ReactNode }) => {
+  return <div className="py-2 px-3">{children}</div>
+}
 
-export default async function Experience() {
-  const experience = getExperienceList()
-  console.log(experience)
-
+export default async function ExperienceWorkLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
   return (
     <>
-      <h1>Опыт работы</h1>
-      <ul className="flex">
-        {experience.map((experience, index) => (
-          <li>
-            <Button as={BUTTON_VIEW.BUTTON} btnStyle="outlined">
-              {experience.company}
-            </Button>
-          </li>
-        ))}
-      </ul>
+      <Wrapper>
+        <Typography
+          as="h3"
+          variant="normal"
+          size="12-14"
+          className="uppercase text-grey-text tracking-[5px]"
+        >
+          Опыт работы
+        </Typography>
+      </Wrapper>
+
+      <ExperienceWorkContextProvider>
+        {children}
+      </ExperienceWorkContextProvider>
     </>
   )
 }
