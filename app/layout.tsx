@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import './globals.css'
-import { Header, Sidebar } from '@/src/widgets/home/ui/Sidebar'
+
 import { inter } from '@/app/fonts'
 import { baseMetadata } from '@/src/shared/config/seo'
 import { ReactNode } from 'react'
@@ -18,7 +18,10 @@ export default async function RootLayout({
   children: ReactNode
 }>) {
   return (
-    <html lang="ru" className={`${inter.className} antialiased h-screen`}>
+    <html
+      lang="ru"
+      className={`${inter.className} antialiased dvh`}
+    >
       <body className="pb-30">
         {children}
         <Navbar />
