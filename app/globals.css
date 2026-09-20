@@ -5,6 +5,7 @@
   --background: #F8F9FF;
   --primary-color: #4648D4 ;
   --secondary-color: #9CA3AF;
+  --secondary-text:#4B5563
 }
 
 
@@ -14,6 +15,7 @@
   --color-primary: var(--primary-color);
   --color-primary-subtle: rgba(70, 72, 212, 0.1);
   --color-secondary: var(--secondary-color);
+  --color-grey-text: var(--secondary-text);
   --color-neutral: #1F2937;
   --animate-fade-slide-up: fade-slide-up .6s cubic-bezier(.22,1,.36,1) both;
   --animate-loader-dash: dash 1.5s ease-in-out infinite;
