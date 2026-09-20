@@ -2,6 +2,7 @@ import { ExperienceWorkFilter } from '@/src/features/experience/ui/ExperienceWor
 import { getExperienceList } from '@/server/getExperienceList'
 import { ExperienceCardList } from '@/src/features/experience/ui/ExperienceList'
 import { ReactNode } from 'react'
+import { Typography } from '@/src/shared/ui/Typography/Typography'
 
 const Wrapper = ({ children }: { children: ReactNode }) => {
   return <div className="py-2 px-3">{children}</div>
@@ -9,14 +10,23 @@ const Wrapper = ({ children }: { children: ReactNode }) => {
 
 export default function ExperiencePage() {
   const experience = getExperienceList()
-  console.log('ExperiencePage', experience)
-
   const companyLabels = experience.map(
     (item) => item.company,
   )
 
   return (
     <>
+      <Wrapper>
+        <Typography
+          as="h3"
+          variant="normal"
+          size="12-14"
+          className="uppercase text-grey-text tracking-[5px]"
+        >
+          Опыт работы
+        </Typography>
+      </Wrapper>
+
       <Wrapper>
         <ExperienceWorkFilter labels={companyLabels} />
       </Wrapper>
