@@ -20,7 +20,7 @@ type PlaceWork = {
   type: string
 }
 
-type ExperienceList = Array<PlaceWork>
+export type ExperienceList = Array<PlaceWork>
 
 export function getExperienceList() {
   const experienceJSON = fs.readFileSync(

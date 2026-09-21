@@ -16,9 +16,8 @@ export const ExperienceWorkFilter = ({
   useEffect(() => {
     setCompanyLabel(labels[0])
   }, [])
-
   return (
-    <>
+    <div className="flex gap-1 overflow-x-scroll scrollbar-none">
       {labels.map((experience: string, idx: number) => {
         return (
           <Button
@@ -29,7 +28,7 @@ export const ExperienceWorkFilter = ({
                 ? 'primary'
                 : 'inverted'
             }
-            className="py-1 px-3"
+            className="py-1 px-3 rounded-full flex-none "
             onClick={() => {
               setCompanyLabel(experience)
             }}
@@ -38,6 +37,6 @@ export const ExperienceWorkFilter = ({
           </Button>
         )
       })}
-    </>
+    </div>
   )
 }

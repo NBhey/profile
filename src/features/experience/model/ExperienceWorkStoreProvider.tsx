@@ -39,7 +39,7 @@ export const useExperienceWorkStore = <T,>(
   )
   if (!experienceStoreContext) {
     throw new Error(
-      `useCounterStore must be used within CounterStoreProvider`,
+      `useCounterStore must be used within ExperienceStoreProvider`,
     )
   }
 
