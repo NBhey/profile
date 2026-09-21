@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import { Typography } from '@/src/shared/ui/Typography/Typography'
 import { Button } from '@/src/shared/ui/Button/Button'
 import { BUTTON_VIEW } from '@/src/shared/model/types'
-import Image from 'next/image'
 import { Author } from '@/src/widgets/home/ui/Author'
+import { Title } from '@/src/shared/ui/Title/Title'
 
 export const metadata: Metadata = {
   description:
@@ -58,8 +58,30 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <div className="py-2 px-3 flex justify-between border-b border-gray-200">
+      <div className="py-2 px-3 flex justify-between border-b border-secondary">
         <Author />
+      </div>
+      <div className="pt-6 px-3 flex flex-col gap-3 ">
+        <Title />
+      </div>
+      <div className="pt-6 px-3 flex  gap-x-4">
+        <Button
+          href="experience"
+          as={BUTTON_VIEW['LINK']}
+          btnStyle="primary"
+        >
+          <Typography as="span" variant="normal">
+            {' '}
+            Смотреть опыт{' '}
+          </Typography>
+        </Button>
+        <Button
+          href="contacts"
+          as={BUTTON_VIEW['LINK']}
+          btnStyle="outlined"
+        >
+          Связаться
+        </Button>
       </div>
     </main>
   )
