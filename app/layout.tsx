@@ -7,6 +7,7 @@ import { baseMetadata } from '@/src/shared/config/seo'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-loading-skeleton/dist/skeleton.css'
 import UniqueVisitorTracking from '@/app/(analytics)/UniqueVisitorTracking'
 import { Navbar } from '@/src/shared/ui/Navbar/Navbar'
 

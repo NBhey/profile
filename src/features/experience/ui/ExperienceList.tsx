@@ -6,6 +6,7 @@ import { type ExperienceList } from '@/server/getExperienceList'
 import { useExperienceWorkStore } from '@/src/features/experience/model/ExperienceWorkStoreProvider'
 import Link from 'next/link'
 import { ROUTES } from '@/src/shared/config/routes'
+import Skeleton from 'react-loading-skeleton'
 
 export const ExperienceCardList = ({
   experience,
@@ -22,11 +23,25 @@ export const ExperienceCardList = ({
     )
   }, [activeLabel])
 
-  // console.log('ExperienceCardList', experienceList)
   return (
     <>
       {!activeLabel ? (
-        'Загрузка...'
+        <>
+          <Skeleton
+            height={28}
+            highlightColor="var(--secondary-color)"
+          />
+
+          <Skeleton
+            height={10}
+            highlightColor="var(--secondary-color)"
+          />
+          <Skeleton
+            height={100}
+            highlightColor="var(--secondary-color)"
+            count={3}
+          />
+        </>
       ) : (
         <>
           <Typography
