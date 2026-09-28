@@ -7,9 +7,13 @@ import github from './github.svg'
 import whatsapp from './whatsapp.svg'
 import telegram from './telegram.svg'
 import downArrow from './downArrow.svg'
+import arrowBack from './arrowBack.svg'
 import { ComponentType, SVGProps } from 'react'
 
-export const Icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+export const Icons: Record<
+  string,
+  ComponentType<SVGProps<SVGSVGElement>>
+> = {
   home,
   projects,
   otherWorkExperience,
@@ -19,4 +23,5 @@ export const Icons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
   whatsapp,
   github,
   downArrow,
+  arrowBack,
 } as const

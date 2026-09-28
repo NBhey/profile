@@ -22,7 +22,7 @@ interface TypographyProps {
   as: ElementType
   children: ReactNode
   variant: keyof typeof textSettings
-  size?: string
+  size?: keyof typeof textSize
   className?: string
 }
 
@@ -35,7 +35,11 @@ export const Typography = ({
 }: TypographyProps) => {
   return (
     <Component
-      className={clsx(textSettings[variant], textSize[size], className)}
+      className={clsx(
+        textSettings[variant],
+        textSize[size],
+        className,
+      )}
     >
       {children}
     </Component>
