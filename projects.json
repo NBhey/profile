@@ -1,0 +1,226 @@
+{
+  "projects": [
+    {
+      "name": "Портфолио",
+      "slug": "profile",
+      "year": 2026,
+      "period": "Май 2026 — настоящее время",
+      "description": "Личный сайт-портфолио: о себе, опыт работы, проекты и форма обратной связи с отправкой письма на почту.",
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Zustand",
+        "nodemailer",
+        "Feature-Sliced Design"
+      ],
+      "highlights": [
+        "Сайт на Next.js 16: страницы и серверная логика в одном проекте, данные об опыте и проектах хранятся в отдельных файлах",
+        "Форма обратной связи отправляет письмо на почту, а пользователь видит уведомление об успехе или ошибке",
+        "Цвета и светлая/тёмная тема настроены в одном месте (Tailwind 4), общие компоненты разложены по понятной структуре (Feature-Sliced Design)"
+      ],
+      "repo": "https://github.com/NBhey/profile",
+      "demo": null
+    },
+    {
+      "name": "CinemaBook",
+      "slug": "cinema",
+      "year": 2026,
+      "period": "Январь 2026 — Май 2026",
+      "description": "Приложение для бронирования билетов в кино: каталог фильмов, расписание сеансов, выбор мест на схеме зала и QR-код билета, плюс административная панель для управления фильмами, залами и сеансами.",
+      "stack": [
+        "React 19",
+        "TypeScript",
+        "React Router 7",
+        "TanStack React Query 5",
+        "React Hook Form 7",
+        "Radix UI",
+        "dnd-kit",
+        "Axios",
+        "CSS Modules",
+        "Feature-Sliced Design"
+      ],
+      "highlights": [
+        "Интерактивная схема зала с разными типами мест (обычные, VIP, недоступные): занятые места выбрать нельзя, а прошедшие сеансы закрываются автоматически",
+        "Панель администратора: настройка рядов и мест с живым превью, расписание сеансов на шкале времени, данные на экране обновляются сразу после изменений",
+        "Единый слой работы с сервером на Axios: ответы автоматически приводятся к формату, принятому во фронтенде"
+      ],
+      "repo": "https://github.com/NBhey/cinema",
+      "demo": "https://nbhey.github.io/cinema/"
+    },
+    {
+      "name": "Сборник задач по JS",
+      "slug": "js-task-book",
+      "year": 2025,
+      "period": "Апрель 2025 — Ноябрь 2025",
+      "description": "Сайт-задачник по JavaScript для начинающих разработчиков: список задач, страница разбора с подсветкой кода и форма обратной связи.",
+      "stack": [
+        "React",
+        "Redux",
+        "redux-thunk",
+        "React Router",
+        "Prism.js",
+        "Webpack",
+        "Babel"
+      ],
+      "highlights": [
+        "Данные приложения хранятся в Redux, задачи подгружаются с сервера (redux-thunk)",
+        "Примеры кода подсвечиваются как в редакторе (Prism.js), у каждой задачи своя страница с разбором",
+        "Сборку настроил вручную на Webpack, сайт автоматически публикуется на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/JS_Task_Book",
+      "demo": "https://nbhey.github.io/JS_Task_Book/"
+    },
+    {
+      "name": "Дипломный проект: бронирование билетов",
+      "slug": "netology-diplom-frontend",
+      "year": 2025,
+      "period": "Апрель 2025 — Август 2025",
+      "description": "Дипломная работа: клиентская часть сервиса бронирования билетов с авторизацией и административной панелью управления залами, ценами и сеансами.",
+      "stack": [
+        "React",
+        "TypeScript",
+        "React Router",
+        "React Hook Form",
+        "Jest",
+        "Testing Library",
+        "CSS Modules"
+      ],
+      "highlights": [
+        "Панель администратора: настройка залов, цены на обычные и VIP-места, расписание сеансов с добавлением фильмов во всплывающем окне",
+        "Формы входа и настроек сделаны на React Hook Form, данные о залах доступны всем страницам через React Context",
+        "Компоненты покрыты автотестами (Jest, Testing Library), сайт автоматически собирается и публикуется на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/Netology_diplom_frontend",
+      "demo": "https://nbhey.github.io/Netology_diplom_frontend/"
+    },
+    {
+      "name": "Прогноз погоды",
+      "slug": "project-weather",
+      "year": 2024,
+      "period": "Октябрь 2024 — Апрель 2025",
+      "description": "Приложение погоды: определение города по IP, список избранных городов, подробный прогноз и отображение города на карте.",
+      "stack": ["JavaScript", "Webpack", "Jest", "Babel", "GitHub Actions"],
+      "highlights": [
+        "Написал собственную навигацию между страницами без фреймворков: главная и подробный прогноз",
+        "Город определяется автоматически, его можно сменить вручную, а избранные города запоминаются в браузере",
+        "Настроил автоматическую проверку кода при каждом изменении и отдельную публикацию на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/Project-Weather",
+      "demo": "https://nbhey.github.io/Project-Weather/"
+    },
+    {
+      "name": "Виселица",
+      "slug": "gallows-js-game",
+      "year": 2024,
+      "period": "Ноябрь 2024 — Декабрь 2025",
+      "description": "Игра «Виселица» на чистом JavaScript, написанная полностью самостоятельно без сторонних игровых библиотек.",
+      "stack": ["JavaScript", "Webpack", "Babel", "CSS"],
+      "highlights": [
+        "Код разбит на независимые части: выбор случайного слова, панель букв, проверка буквы, отрисовка отгаданных букв и стадий виселицы",
+        "Игровое поле и ход партии написаны на чистом JavaScript, без библиотек",
+        "Сборка на Webpack, автоматическая публикация на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/Gallows-JS-game",
+      "demo": "https://nbhey.github.io/Gallows-JS-game/"
+    },
+    {
+      "name": "Игра «Жизнь»",
+      "slug": "life-of-game",
+      "year": 2024,
+      "period": "Август 2024 — Ноябрь 2025",
+      "description": "Клеточный автомат «Игра жизни» Конвея на TypeScript: редактируемое поле, запуск и остановка симуляции, пошаговая смена поколений.",
+      "stack": ["TypeScript", "Webpack", "Jest", "Babel", "GitHub Actions"],
+      "highlights": [
+        "Разделил код на игровое поле, расчёт поколений и отображение — благодаря этому правила игры покрыты автотестами",
+        "Отдельные тесты (Jest) для расчёта поля и для его отображения",
+        "Тесты запускаются автоматически при каждом изменении, сайт публикуется на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/Life-of-Game",
+      "demo": "https://nbhey.github.io/Life-of-Game/"
+    },
+    {
+      "name": "Личная страница",
+      "slug": "mypage",
+      "year": 2024,
+      "period": "Июнь 2024 — Декабрь 2025",
+      "description": "Первая версия личного сайта: блоки о себе, навыки, работы и галерея сертификатов с курсов.",
+      "stack": ["JavaScript", "CSS", "Webpack", "GitHub Actions"],
+      "highlights": [
+        "Галерея сертификатов прокручивается перетаскиванием мышью — написал сам, без библиотек",
+        "Выпадающее меню, переключатель темы и слайдер работ написаны вручную, стили разнесены по файлам под каждый блок страницы",
+        "Сборка на Webpack, автоматическая публикация на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/MyPage",
+      "demo": "https://nbhey.github.io/MyPage/"
+    },
+    {
+      "name": "Сайт медицинской клиники",
+      "slug": "rocket-business",
+      "year": 2024,
+      "period": "Май 2024 — Июль 2024",
+      "description": "Тестовое задание: адаптивный сайт клиники с описанием услуг, слайдером и всплывающей формой заявки с отправкой письма на почту.",
+      "stack": ["JavaScript", "SCSS", "БЭМ", "Webpack", "Jest"],
+      "highlights": [
+        "Слайдер и всплывающая форма написаны нативно — по условиям задания нельзя было использовать jQuery и React",
+        "Аккуратная вёрстка по БЭМ на SCSS: удобная мобильная версия и разметка без ошибок",
+        "Форма заявки отправляет письмо на почту, её работа автоматически проверяется тестами (Jest)"
+      ],
+      "repo": "https://github.com/NBhey/Rocket-Business-",
+      "demo": "https://nbhey.github.io/Rocket-Business-/"
+    },
+    {
+      "name": "Погодное приложение",
+      "slug": "weatherapp",
+      "year": 2024,
+      "period": "Апрель 2024 — Август 2024",
+      "description": "Первое приложение погоды: определение местоположения по IP, выбор города из списка и отображение его на карте.",
+      "stack": ["JavaScript", "Webpack", "Jest", "ESLint", "Babel"],
+      "highlights": [
+        "Определение города по IP вынесено в отдельный модуль и покрыто тестами на Jest",
+        "Выбранный город показывается на карте и запоминается в браузере",
+        "Настроил автоматическую проверку стиля кода (ESLint) и публикацию на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/WeatherApp",
+      "demo": "https://nbhey.github.io/WeatherApp/"
+    },
+    {
+      "name": "Guest House",
+      "slug": "pet-project1-html-css",
+      "year": 2023,
+      "period": "Май 2023 — Апрель 2024",
+      "description": "Вёрстка многосекционного лендинга гостевого дома по макету из Figma.",
+      "stack": ["HTML", "CSS", "JavaScript", "Webpack"],
+      "highlights": [
+        "Полная вёрстка по макету Figma с попиксельным соответствием дизайну",
+        "Сборка настроена вручную на Webpack: обработка HTML, CSS и изображений",
+        "Автоматическая сборка и публикация на GitHub Pages"
+      ],
+      "repo": "https://github.com/NBhey/Pet-Project1-HTML-CSS",
+      "demo": "https://nbhey.github.io/Pet-Project1-HTML-CSS/"
+    },
+    {
+      "name": "Адаптивная секция: Bootstrap и Tailwind",
+      "slug": "css-markarian-tridrikh",
+      "year": 2023,
+      "period": "Январь 2023 — Июнь 2024",
+      "description": "Вёрстка секции с кастомными шрифтами и анимациями, выполненная в двух вариантах — на Bootstrap и на Tailwind — для сравнения подходов.",
+      "stack": [
+        "HTML",
+        "SCSS",
+        "PostCSS",
+        "Bootstrap",
+        "Tailwind CSS",
+        "Webpack"
+      ],
+      "highlights": [
+        "Одна и та же секция реализована дважды — на Bootstrap и на Tailwind, чтобы сравнить оба подхода к вёрстке",
+        "Оценки Google Lighthouse (проверка качества сайта): скорость 87%, доступность 100%, рекомендации 92%, SEO 90%",
+        "Сборка на Webpack со сжатием стилей и изображений и поддержкой старых браузеров; подключены шрифты Butler"
+      ],
+      "repo": "https://github.com/NBhey/css-Markarian-Tridrikh",
+      "demo": "https://nbhey.github.io/css-Markarian-Tridrikh/"
+    }
+  ]
+}
