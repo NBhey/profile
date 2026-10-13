@@ -1,5 +1,5 @@
 import { getExperienceList } from '@/server/getExperienceList'
-import Content from '@/src/widgets/experienceItem/ui/Content'
+import Content from '@/src/widgets/experience/ui/Content'
 
 export default async function Project() {
   const currentExperience = getExperienceList()

@@ -48,8 +48,6 @@ export default function Content({
     }),
   )
 
-  console.log(experienceProject)
-
   return (
     <>
       <Wrapper className="pb-3 bg-primary">
